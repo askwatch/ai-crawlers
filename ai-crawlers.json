@@ -1,0 +1,467 @@
+{
+  "source": "https://askwatch.ai/ai-crawlers",
+  "verified": "2026-09-29",
+  "license": "CC-BY-4.0",
+  "groups": [
+    {
+      "id": "search",
+      "title": "Search engines"
+    },
+    {
+      "id": "ai-search",
+      "title": "AI search and answers"
+    },
+    {
+      "id": "training",
+      "title": "AI training"
+    },
+    {
+      "id": "user",
+      "title": "Fetches on a user's request"
+    }
+  ],
+  "robotsTxtValues": {
+    "yes": "The operator says the crawler obeys robots.txt.",
+    "partly": "The operator says robots.txt rules may not apply, because the fetch is made on a user's request.",
+    "token": "Not a crawler but a product token: another crawler reads the rule for it.",
+    "unknown": "The operator publishes no documentation."
+  },
+  "bots": [
+    {
+      "token": "Googlebot",
+      "operator": "Google",
+      "group": "search",
+      "purpose": "Google Search, including AI Overviews and AI Mode",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      "ipList": "https://developers.google.com/static/search/apis/ipranges/googlebot.json",
+      "reverseDns": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "about": "Google's main crawler for Google Search. What it fetches is also what AI Overviews and AI Mode draw on, since both are part of Search. It crawls mostly as a smartphone, and the string above is one of several it sends.",
+      "documentation": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "page": "https://askwatch.ai/ai-crawlers/googlebot"
+    },
+    {
+      "token": "Bingbot",
+      "operator": "Microsoft",
+      "group": "search",
+      "purpose": "Bing search, which also feeds Copilot",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/W.X.Y.Z Safari/537.36",
+      "ipList": "https://www.bing.com/toolbox/bingbot.json",
+      "reverseDns": [
+        "search.msn.com"
+      ],
+      "about": "Microsoft's crawler for Bing. The Bing index also feeds Microsoft Copilot's web answers, so a page Bingbot cannot read is missing from both.",
+      "documentation": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+      "page": "https://askwatch.ai/ai-crawlers/bingbot"
+    },
+    {
+      "token": "Applebot",
+      "operator": "Apple",
+      "group": "search",
+      "purpose": "Spotlight, Siri and Safari suggestions",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+      "ipList": "https://search.developer.apple.com/applebot.json",
+      "reverseDns": [
+        "applebot.apple.com"
+      ],
+      "about": "Apple's crawler for Spotlight, Siri and Safari suggestions. Apple says that if a site's robots.txt names Googlebot but not Applebot, Applebot follows the Googlebot rules.",
+      "documentation": "https://support.apple.com/en-us/119829",
+      "page": "https://askwatch.ai/ai-crawlers/applebot"
+    },
+    {
+      "token": "DuckDuckBot",
+      "operator": "DuckDuckGo",
+      "group": "search",
+      "purpose": "DuckDuckGo search",
+      "robotsTxt": "yes",
+      "userAgent": "DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)",
+      "ipList": "https://duckduckgo.com/duckduckbot.json",
+      "reverseDns": null,
+      "about": "DuckDuckGo's crawler for its search results. DuckDuckGo says it respects robots.txt and publishes the addresses it crawls from.",
+      "documentation": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot",
+      "page": "https://askwatch.ai/ai-crawlers/duckduckbot"
+    },
+    {
+      "token": "YandexBot",
+      "operator": "Yandex",
+      "group": "search",
+      "purpose": "Yandex search",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)",
+      "ipList": null,
+      "reverseDns": [
+        "yandex.ru",
+        "yandex.net",
+        "yandex.com"
+      ],
+      "about": "Yandex's main search crawler. Yandex runs a family of robots with their own tokens (images, video, news); YandexBot is the one that builds the web index.",
+      "documentation": "https://yandex.com/support/webmaster/en/robot-workings/check-yandex-robots",
+      "page": "https://askwatch.ai/ai-crawlers/yandexbot"
+    },
+    {
+      "token": "OAI-SearchBot",
+      "operator": "OpenAI",
+      "group": "ai-search",
+      "purpose": "Pages shown and cited in ChatGPT search",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot",
+      "ipList": "https://openai.com/searchbot.json",
+      "reverseDns": null,
+      "about": "OpenAI's crawler for search in ChatGPT. It finds the pages ChatGPT shows and links to in its answers. OpenAI says sites that opt out of OAI-SearchBot will not be shown in ChatGPT search answers, though they can still appear as navigational links.",
+      "documentation": "https://developers.openai.com/api/docs/bots",
+      "page": "https://askwatch.ai/ai-crawlers/oai-searchbot"
+    },
+    {
+      "token": "Claude-SearchBot",
+      "operator": "Anthropic",
+      "group": "ai-search",
+      "purpose": "Search results for Claude's answers",
+      "robotsTxt": "yes",
+      "userAgent": null,
+      "ipList": "https://claude.com/crawling/bots.json",
+      "reverseDns": null,
+      "about": "Anthropic's crawler for search quality in Claude. Anthropic says disabling it prevents Claude from indexing a site's content for search, which may reduce the site's visibility and accuracy in Claude's search results.",
+      "documentation": "https://support.claude.com/en/articles/8896518",
+      "page": "https://askwatch.ai/ai-crawlers/claude-searchbot"
+    },
+    {
+      "token": "PerplexityBot",
+      "operator": "Perplexity",
+      "group": "ai-search",
+      "purpose": "Perplexity's index for cited answers, not training",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
+      "ipList": "https://www.perplexity.com/perplexitybot.json",
+      "reverseDns": null,
+      "about": "Perplexity's crawler for surfacing and linking websites in its search results. Perplexity says it is not used to crawl content for AI foundation models, and recommends allowing it in robots.txt for a site to appear in Perplexity's answers.",
+      "documentation": "https://docs.perplexity.ai/guides/bots",
+      "page": "https://askwatch.ai/ai-crawlers/perplexitybot"
+    },
+    {
+      "token": "DuckAssistBot",
+      "operator": "DuckDuckGo",
+      "group": "ai-search",
+      "purpose": "Sources for DuckAssist answers, not training",
+      "robotsTxt": "yes",
+      "userAgent": "DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistbot.html)",
+      "ipList": "https://duckduckgo.com/duckassistbot.json",
+      "reverseDns": null,
+      "about": "DuckDuckGo's crawler for DuckAssist, its AI-assisted answers. DuckDuckGo says the data is not used to train AI models and that blocking it does not affect a site's place in DuckDuckGo's regular results.",
+      "documentation": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot",
+      "page": "https://askwatch.ai/ai-crawlers/duckassistbot"
+    },
+    {
+      "token": "Amzn-SearchBot",
+      "operator": "Amazon",
+      "group": "ai-search",
+      "purpose": "Search experiences in Amazon products, such as Alexa",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-SearchBot/0.1) Chrome/W.X.Y.Z Safari/537.36",
+      "ipList": null,
+      "reverseDns": null,
+      "about": "Amazon's crawler for search experiences in its products and services, such as Alexa. Amazon says that if robots.txt does not mention Amzn-SearchBot but allows other search bots, it follows the rules given to them.",
+      "documentation": "https://developer.amazon.com/amazonbot",
+      "page": "https://askwatch.ai/ai-crawlers/amzn-searchbot"
+    },
+    {
+      "token": "MistralAI-Index",
+      "operator": "Mistral",
+      "group": "ai-search",
+      "purpose": "Mistral search, which answers questions in Vibe",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Index/1.0; +https://docs.mistral.ai/robots)",
+      "ipList": "https://mistral.ai/mistralai-index-ips.json",
+      "reverseDns": null,
+      "about": "Mistral's crawler for indexing only: it builds Mistral search, which answers questions in Vibe. Mistral says content it crawls is not used for generative AI training of any kind.",
+      "documentation": "https://docs.mistral.ai/robots",
+      "page": "https://askwatch.ai/ai-crawlers/mistralai-index"
+    },
+    {
+      "token": "GPTBot",
+      "operator": "OpenAI",
+      "group": "training",
+      "purpose": "Training OpenAI's models",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot",
+      "ipList": "https://openai.com/gptbot.json",
+      "reverseDns": null,
+      "about": "OpenAI's crawler for content that may be used to train its generative AI foundation models. Blocking it keeps a site out of future training data; it does not affect whether ChatGPT search shows the site, which is OAI-SearchBot's job.",
+      "documentation": "https://developers.openai.com/api/docs/bots",
+      "page": "https://askwatch.ai/ai-crawlers/gptbot"
+    },
+    {
+      "token": "ClaudeBot",
+      "operator": "Anthropic",
+      "group": "training",
+      "purpose": "Training Anthropic's models",
+      "robotsTxt": "yes",
+      "userAgent": null,
+      "ipList": "https://claude.com/crawling/bots.json",
+      "reverseDns": null,
+      "about": "Anthropic's crawler for public web content that may contribute to training its models. Anthropic says ClaudeBot respects robots.txt, including the Crawl-delay extension, and does not try to bypass CAPTCHAs.",
+      "documentation": "https://support.claude.com/en/articles/8896518",
+      "page": "https://askwatch.ai/ai-crawlers/claudebot"
+    },
+    {
+      "token": "Google-Extended",
+      "operator": "Google",
+      "group": "training",
+      "purpose": "Gemini and Vertex AI training; no effect on Search or AI Overviews",
+      "robotsTxt": "token",
+      "userAgent": null,
+      "ipList": null,
+      "reverseDns": null,
+      "about": "A product token, not a crawler: Googlebot reads the rule for it. It controls whether content Google crawls may be used to train future Gemini models and for grounding in Gemini apps and Vertex AI. It does not affect Google Search, including AI Overviews and AI Mode.",
+      "documentation": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "page": "https://askwatch.ai/ai-crawlers/google-extended"
+    },
+    {
+      "token": "Applebot-Extended",
+      "operator": "Apple",
+      "group": "training",
+      "purpose": "Apple Intelligence training; Applebot reads the rule",
+      "robotsTxt": "token",
+      "userAgent": null,
+      "ipList": null,
+      "reverseDns": null,
+      "about": "A product token, not a crawler: Applebot reads the rule for it. It controls whether content Applebot crawls may be used to train Apple's foundation models for Apple Intelligence. Pages still appear in Spotlight, Siri and Safari results.",
+      "documentation": "https://support.apple.com/en-us/119829",
+      "page": "https://askwatch.ai/ai-crawlers/applebot-extended"
+    },
+    {
+      "token": "CCBot",
+      "operator": "Common Crawl",
+      "group": "training",
+      "purpose": "The open web archive many models train on",
+      "robotsTxt": "yes",
+      "userAgent": "CCBot/2.0 (https://commoncrawl.org/faq/)",
+      "ipList": "https://index.commoncrawl.org/ccbot.json",
+      "reverseDns": null,
+      "about": "Common Crawl's crawler. Common Crawl is a non-profit that publishes an open archive of the web, and that archive is one of the most widely used sources of training data for language models. Blocking CCBot keeps new pages out of the archive.",
+      "documentation": "https://commoncrawl.org/ccbot",
+      "page": "https://askwatch.ai/ai-crawlers/ccbot"
+    },
+    {
+      "token": "meta-externalagent",
+      "operator": "Meta",
+      "group": "training",
+      "purpose": "Training Meta's AI models",
+      "robotsTxt": "yes",
+      "userAgent": "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/web-crawlers)",
+      "ipList": null,
+      "reverseDns": null,
+      "about": "Meta's crawler for use cases such as training foundation AI models or improving products by indexing content directly. Meta asks sites to allow up to 24 hours for robots.txt changes to take effect.",
+      "documentation": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers",
+      "page": "https://askwatch.ai/ai-crawlers/meta-externalagent"
+    },
+    {
+      "token": "Bytespider",
+      "operator": "ByteDance",
+      "group": "training",
+      "purpose": "Training ByteDance's models",
+      "robotsTxt": "unknown",
+      "userAgent": null,
+      "ipList": null,
+      "reverseDns": null,
+      "about": "ByteDance's crawler, widely reported as collecting data for its AI models. ByteDance publishes no documentation for it: no user-agent string, no IP list and no statement about robots.txt, so a robots.txt rule is the only request you can make, and a firewall rule the only enforcement.",
+      "documentation": null,
+      "page": "https://askwatch.ai/ai-crawlers/bytespider"
+    },
+    {
+      "token": "Amazonbot",
+      "operator": "Amazon",
+      "group": "training",
+      "purpose": "Amazon's services, including model training",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1) Chrome/W.X.Y.Z Safari/537.36",
+      "ipList": "https://developer.amazon.com/amazonbot/ip-addresses/",
+      "reverseDns": null,
+      "about": "Amazon's general crawler, used to improve Amazon's products and services, which Amazon says may include training its AI models. It has two siblings: Amzn-SearchBot for search and Amzn-User for requests a user makes.",
+      "documentation": "https://developer.amazon.com/amazonbot",
+      "page": "https://askwatch.ai/ai-crawlers/amazonbot"
+    },
+    {
+      "token": "MistralAI-Training",
+      "operator": "Mistral",
+      "group": "training",
+      "purpose": "Training Mistral's models",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Training/1.0; +https://docs.mistral.ai/robots)",
+      "ipList": null,
+      "reverseDns": null,
+      "about": "Mistral's crawler for building training datasets for its models. Blocking it leaves MistralAI-Index and MistralAI-User, which serve answers in Vibe, untouched.",
+      "documentation": "https://docs.mistral.ai/robots",
+      "page": "https://askwatch.ai/ai-crawlers/mistralai-training"
+    },
+    {
+      "token": "ChatGPT-User",
+      "operator": "OpenAI",
+      "group": "user",
+      "purpose": "Pages a ChatGPT user asks it to open",
+      "robotsTxt": "partly",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+      "ipList": "https://openai.com/chatgpt-user.json",
+      "reverseDns": null,
+      "about": "ChatGPT's fetcher for pages a user or a custom GPT asks it to visit. OpenAI says that because these visits are started by a user, robots.txt rules may not apply, and that ChatGPT-User is not used to decide whether content appears in search.",
+      "documentation": "https://developers.openai.com/api/docs/bots",
+      "page": "https://askwatch.ai/ai-crawlers/chatgpt-user"
+    },
+    {
+      "token": "Claude-User",
+      "operator": "Anthropic",
+      "group": "user",
+      "purpose": "Pages a Claude user asks it to open",
+      "robotsTxt": "yes",
+      "userAgent": null,
+      "ipList": "https://claude.com/crawling/bots.json",
+      "reverseDns": null,
+      "about": "Claude's fetcher for pages a user's question leads it to. Anthropic says it respects robots.txt, and that blocking it stops Claude from retrieving a site's content for a user's query, which may reduce the site's visibility in user-directed web search.",
+      "documentation": "https://support.claude.com/en/articles/8896518",
+      "page": "https://askwatch.ai/ai-crawlers/claude-user"
+    },
+    {
+      "token": "Perplexity-User",
+      "operator": "Perplexity",
+      "group": "user",
+      "purpose": "Pages a Perplexity user asks it to open",
+      "robotsTxt": "partly",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)",
+      "ipList": "https://www.perplexity.com/perplexity-user.json",
+      "reverseDns": null,
+      "about": "Perplexity's fetcher for pages it visits while answering a user's question, linking them in the answer. Perplexity says that since a user requested the fetch, it generally ignores robots.txt, and that it is not used for web crawling or to collect training data.",
+      "documentation": "https://docs.perplexity.ai/guides/bots",
+      "page": "https://askwatch.ai/ai-crawlers/perplexity-user"
+    },
+    {
+      "token": "meta-externalfetcher",
+      "operator": "Meta",
+      "group": "user",
+      "purpose": "Links a user asks a Meta AI product to fetch",
+      "robotsTxt": "partly",
+      "userAgent": "meta-externalfetcher/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/web-crawlers)",
+      "ipList": null,
+      "reverseDns": null,
+      "about": "Meta's fetcher for individual links at a user's request, including helping AI navigate websites to complete tasks for users. Meta says that accordingly it may bypass robots.txt rules.",
+      "documentation": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers",
+      "page": "https://askwatch.ai/ai-crawlers/meta-externalfetcher"
+    },
+    {
+      "token": "Amzn-User",
+      "operator": "Amazon",
+      "group": "user",
+      "purpose": "Requests a user starts in Amazon's products",
+      "robotsTxt": "partly",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-User/0.1) Chrome/W.X.Y.Z Safari/537.36",
+      "ipList": null,
+      "reverseDns": null,
+      "about": "Amazon's fetcher for requests a user starts in Amazon's products. Amazon says that because its actions can be started by a user, it may not follow all robots.txt rules.",
+      "documentation": "https://developer.amazon.com/amazonbot",
+      "page": "https://askwatch.ai/ai-crawlers/amzn-user"
+    },
+    {
+      "token": "MistralAI-User",
+      "operator": "Mistral",
+      "group": "user",
+      "purpose": "Pages a Vibe user's question leads it to",
+      "robotsTxt": "yes",
+      "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-User/1.0; +https://docs.mistral.ai/robots)",
+      "ipList": "https://mistral.ai/mistralai-user-ips.json",
+      "reverseDns": null,
+      "about": "Mistral's fetcher for user actions in Vibe: when a user asks a question, it may visit a page to answer and link to it. Mistral says it is not used for automatic crawling or for AI training.",
+      "documentation": "https://docs.mistral.ai/robots",
+      "page": "https://askwatch.ai/ai-crawlers/mistralai-user"
+    }
+  ],
+  "legacyTokens": [
+    {
+      "token": "anthropic-ai",
+      "replacedBy": "ClaudeBot",
+      "note": "Anthropic's old token; its crawler is ClaudeBot"
+    },
+    {
+      "token": "claude-web",
+      "replacedBy": "ClaudeBot",
+      "note": "Anthropic's old token; its crawler is ClaudeBot"
+    },
+    {
+      "token": "facebookbot",
+      "replacedBy": "meta-externalagent",
+      "note": "Meta's old training crawler"
+    }
+  ],
+  "wrongTokens": [
+    {
+      "name": "chatgpt",
+      "use": "GPTBot, OAI-SearchBot or ChatGPT-User"
+    },
+    {
+      "name": "openai",
+      "use": "GPTBot, OAI-SearchBot or ChatGPT-User"
+    },
+    {
+      "name": "gpt-bot",
+      "use": "GPTBot"
+    },
+    {
+      "name": "claude",
+      "use": "ClaudeBot, Claude-SearchBot or Claude-User"
+    },
+    {
+      "name": "anthropic",
+      "use": "ClaudeBot, Claude-SearchBot or Claude-User"
+    },
+    {
+      "name": "perplexity",
+      "use": "PerplexityBot or Perplexity-User"
+    },
+    {
+      "name": "gemini",
+      "use": "Google-Extended"
+    },
+    {
+      "name": "bard",
+      "use": "Google-Extended"
+    },
+    {
+      "name": "google-gemini",
+      "use": "Google-Extended"
+    },
+    {
+      "name": "copilot",
+      "use": "Bingbot"
+    },
+    {
+      "name": "meta",
+      "use": "meta-externalagent"
+    },
+    {
+      "name": "meta-ai",
+      "use": "meta-externalagent"
+    },
+    {
+      "name": "bytedance",
+      "use": "Bytespider"
+    },
+    {
+      "name": "tiktok",
+      "use": "Bytespider"
+    },
+    {
+      "name": "common-crawl",
+      "use": "CCBot"
+    },
+    {
+      "name": "commoncrawl",
+      "use": "CCBot"
+    },
+    {
+      "name": "mistral",
+      "use": "MistralAI-User, MistralAI-Index or MistralAI-Training"
+    }
+  ]
+}
